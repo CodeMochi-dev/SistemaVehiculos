@@ -1,0 +1,15 @@
+# Ignorar configuraciones de IntelliJ IDEA
+.idea/
+*.iml
+out/
+gen/
+bin/
+target/
+
+# Ignorar archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos compilados de Java
+*.class
+
