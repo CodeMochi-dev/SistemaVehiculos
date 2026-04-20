@@ -1,6 +1,6 @@
 package src;
 
-abstract class Vehiculo {
+public abstract class Vehiculo {
 
     // -------------------------------
     // ATRIBUTOS PRIVADOS
@@ -94,5 +94,12 @@ abstract class Vehiculo {
                 + " | Marca: " + marca
                 + " | Capacidad: " + capacidadCarga + " kg"
                 + " | Disponible: " + (disponible ? "Sí" : "No");
+    }
+
+    public String mostrarDatos(boolean detallado){
+        if(detallado){
+            return mostrarDatos() + " | Hash:" + hashCode();
+        }
+        return mostrarDatos();
     }
 }

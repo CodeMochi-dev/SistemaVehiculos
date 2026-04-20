@@ -13,6 +13,10 @@ class Furgon extends Vehiculo {
         setVolumenCarga(volumenCarga);
     }
 
+    public Furgon(String patente, String marca){
+        this(patente, marca, 800, 12);
+    }
+
     public double getVolumenCarga() {
         return volumenCarga;
     }

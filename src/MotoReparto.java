@@ -13,6 +13,10 @@ class MotoReparto extends Vehiculo {
         this.cajaTermica = cajaTermica;
     }
 
+    public MotoReparto(String patente, String marca){
+        this(patente, marca, 80,false);
+    }
+
     public boolean isCajaTermica() {
         return cajaTermica;
     }
