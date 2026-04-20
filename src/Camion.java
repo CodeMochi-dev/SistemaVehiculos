@@ -14,6 +14,11 @@ class Camion extends Vehiculo {
         setNumeroEjes(numeroEjes);
     }
 
+    //Constructor sobrecargado
+    public Camion(String patente, String marca){
+        this(patente, marca, 1000, 2);
+    }
+
     public int getNumeroEjes() {
         return numeroEjes;
     }

@@ -89,6 +89,15 @@ public class SistemaVehiculos {
         return false;
     }
 
+    public static Vehiculo buscarVehiculo(String patente){
+        for(Vehiculo v: vehiculos){
+            if(v.getPatente().equalsIgnoreCase(patente.trim())){
+                return v;
+            }
+        }
+        return null;
+    }
+
     // -------------------------------
     // REGISTRAR CAMIÓN
     // Crea un objeto Camion y lo guarda en la lista
@@ -124,7 +133,7 @@ public class SistemaVehiculos {
         try {
             System.out.println("\n--- Registro de furgón ---");
 
-            String patente = leerTexto("Patente: ");
+            String patente = leerTexto("Patente: ", true);
 
             if (patenteExiste(patente)) {
                 System.out.println("Ya existe un vehículo con esa patente.");
@@ -150,7 +159,7 @@ public class SistemaVehiculos {
         try {
             System.out.println("\n--- Registro de moto de reparto ---");
 
-            String patente = leerTexto("Patente: ");
+            String patente = leerTexto("Patente: ", true);
 
             if (patenteExiste(patente)) {
                 System.out.println("Ya existe un vehículo con esa patente.");
@@ -186,7 +195,7 @@ public class SistemaVehiculos {
 
         System.out.println("\n--- TODOS LOS VEHÍCULOS ---");
         for (Vehiculo v : vehiculos) {
-            System.out.println(v.mostrarDatos());
+            System.out.println(v.mostrarDatos(true));
         }
     }
 
@@ -274,6 +283,17 @@ public class SistemaVehiculos {
     public static String leerTexto(String mensaje) {
         System.out.print(mensaje);
         return sc.nextLine().trim();
+    }
+
+    public static String leerTexto(String mensaje, boolean obligatorio){
+        while(true) {
+            System.out.println(mensaje);
+            String texto = sc.nextLine().trim();
+            if (!obligatorio || !texto.isEmpty()) {
+                return texto;
+            }
+            System.out.println("Este campo es obligatorio");
+        }
     }
 
     public static int leerEntero(String mensaje) {
